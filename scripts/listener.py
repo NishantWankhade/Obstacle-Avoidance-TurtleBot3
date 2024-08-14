@@ -14,6 +14,9 @@ def admissible(range):
 
 def talker(pub, rate):
     while not rospy.is_shutdown():
+
+        ## TODO --> Logic for the code
+
         pub.publish(hello_str)
         rate.sleep()
 
@@ -25,9 +28,6 @@ def callback(data, args):
 
     while(admissible(at_front)):
         talker(publisher_node, sleep_rate)
-
-    ## TODO --> Logic for the code
-
 
 def listener():
     rospy.init_node('listener', anonymous=True)
